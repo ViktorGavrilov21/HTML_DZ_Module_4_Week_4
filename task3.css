@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    display: flex;
+    perspective: 1000px;
+
+}
+
+.secret-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 1;
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background-color: #9b3078;
+    border: 3px solid #6a1d50;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.door-left {
+    transform-origin: left center;
+}
+
+.door-right {
+    transform-origin: right center;
+}
+
+.container:hover .door {
+    transition: transform 2s ease;
+}
+
+.container:hover .door-left {
+    transform: rotateY(65deg);
+}
+
+.container:hover .door-right {
+    transform: rotateY(-65deg);
+}
